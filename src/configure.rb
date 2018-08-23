@@ -8,15 +8,10 @@ class Configure
     @kubernetesUrl = ENV["kubernetesUrl"]
   end
 
-
-  def getKubernetesUrl
-    return @kubernetesUrl
-  end
-
   def connectionProxy
 
     statusCode = HTTP.get(@kubernetesUrl.to_s).status
-    return statusCode
+    statusCode
 
   end
 end
